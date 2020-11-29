@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', function () {
-    $posts = Post::with('author')->get();
+    $posts = Post::with('user')->get();
     return view('landing')->with('posts', $posts);
 });
 

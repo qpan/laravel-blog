@@ -22,8 +22,14 @@ class Post extends Model
     }
 
     // returns the instance of the user who is author of that post
-    public function author()
+    // public function author()
+    // {
+    //     return $this->belongsTo(User::class, $foreignKey = 'user_id', $ownerKey = 'id', $relation = 'users');
+    // }
+
+    // returns the instance of the user who is author of that post
+    public function user()
     {
-        return $this->belongsTo(User::class, $foreignKey = 'user_id', $ownerKey = 'id', $relation = 'users');
+        return $this->belongsTo(User::class);
     }
 }
