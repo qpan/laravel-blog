@@ -1,5 +1,8 @@
 <?php
 
+use App\Models\User;
+use App\Models\Post;
+use App\Models\Comment;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +16,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('landing');
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('users', User::class);
+Route::resource('posts', Post::class);
+Route::resource('comments', Comment::class);
