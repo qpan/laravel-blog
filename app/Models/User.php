@@ -55,7 +55,7 @@ class User extends Authenticatable
         return $this->hasMany(Comment::class);
     }
 
-    public function can_pos()
+    public function can_post()
     {
         $role = $this->role;
         if ($role == 'author' || $role == 'admin') {

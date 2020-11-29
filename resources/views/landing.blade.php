@@ -37,16 +37,17 @@
                 </div>
             @endif
 
-            <div class="card mt-lg-5 mr-5">
-                <div class="card-header">
-                    Featured
+            @foreach($posts as $post)
+                <div class="card mt-lg-5 mr-5">
+                    <div class="card-header">
+                        {{ $post->title }}
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $post->title }}</h5>
+                        <p class="card-text">{{ $post->body }}</p>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
+            @endforeach
         </div>
     </body>
 </html>

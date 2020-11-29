@@ -21,7 +21,8 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', function () {
-    return view('landing');
+    $posts = Post::with('author')->get();
+    return view('landing')->with('posts', $posts);
 });
 
 Auth::routes();
