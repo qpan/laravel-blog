@@ -22,7 +22,7 @@ class CreatePostsTable extends Migration
                 ->onDelete('cascade');
             $table->string('title')->unique();
             $table->text('body');
-            $table->string('slug')->unique();
+            // $table->string('slug')->unique();
             $table->boolean('active');
         });
     }
