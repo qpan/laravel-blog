@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', function () {
-    $posts = Post::with('user')->get();
+    $posts = Post::with('user')->paginate(10);
     return view('landing')->with('posts', $posts);
 });
 

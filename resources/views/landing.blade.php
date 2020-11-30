@@ -49,6 +49,7 @@
                     </div>
                 </div>
             @endforeach
+            {{ $posts->withQueryString()->links('pagination::bootstrap-4') }}
         </div>
     </body>
 </html>
